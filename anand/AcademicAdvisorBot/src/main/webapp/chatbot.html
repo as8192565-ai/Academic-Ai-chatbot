@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI Academic Chatbot</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+background:
+linear-gradient(
+135deg,
+#06142e,
+#0f3460,
+#1b3c73
+);
+
+}
+
+.container{
+
+width:900px;
+height:90vh;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border-radius:30px;
+
+overflow:hidden;
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.4);
+
+display:flex;
+flex-direction:column;
+}
+
+/* Header */
+
+.header{
+
+padding:20px;
+
+background:
+rgba(255,255,255,.05);
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+color:white;
+}
+
+.logo{
+
+font-size:28px;
+font-weight:bold;
+}
+
+.logo span{
+
+color:#4da3ff;
+}
+
+/* Chat */
+
+.chat-box{
+
+flex:1;
+
+padding:20px;
+
+overflow-y:auto;
+
+display:flex;
+flex-direction:column;
+
+gap:15px;
+}
+
+.user{
+
+align-self:flex-end;
+
+background:
+linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+padding:15px;
+border-radius:20px;
+
+max-width:70%;
+
+color:white;
+}
+
+.bot{
+
+align-self:flex-start;
+
+background:
+rgba(255,255,255,.1);
+
+padding:15px;
+
+border-radius:20px;
+
+max-width:70%;
+
+color:white;
+}
+
+/* Bottom */
+
+.bottom{
+
+padding:20px;
+
+display:flex;
+
+gap:15px;
+
+background:
+rgba(255,255,255,.05);
+
+}
+
+.bottom input{
+
+flex:1;
+
+padding:15px;
+
+border:none;
+outline:none;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,.08);
+
+color:white;
+}
+
+.bottom button{
+
+padding:15px 30px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:
+linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+color:white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div class="logo">
+
+🤖 Academic<span>Bot</span>
+
+</div>
+
+<div>
+
+AI Advisor Online
+
+</div>
+
+</div>
+
+<div class="chat-box"
+id="chatBox">
+
+<div class="bot">
+
+Hello 👋<br>
+Ask anything about academics.
+
+</div>
+
+</div>
+
+
+<div class="bottom">
+
+<input
+type="text"
+id="msg"
+placeholder="Ask anything...">
+
+<button onclick="sendMessage()">
+
+Send
+
+</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function sendMessage(){
+
+let msg=
+document.getElementById("msg");
+
+let text=
+msg.value.trim();
+
+if(text=="") return;
+
+let chat=
+document.getElementById("chatBox");
+
+chat.innerHTML +=
+
+"<div class='user'>"
++text+
+"</div>";
+
+fetch(
+"ChatServlet",
+{
+
+method:"POST",
+
+headers:{
+
+"Content-Type":
+"application/x-www-form-urlencoded"
+
+},
+
+body:
+"message="
++encodeURIComponent(text)
+
+}
+
+)
+
+.then(response=>response.text())
+
+.then(data=>{
+
+chat.innerHTML +=
+
+"<div class='bot'>"
++data+
+"</div>";
+
+chat.scrollTop=
+chat.scrollHeight;
+
+});
+
+msg.value="";
+
+}
+
+</script>
+
+</body>
+</html>

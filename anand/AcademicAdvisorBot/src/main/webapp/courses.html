@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Academic Courses</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:
+linear-gradient(
+135deg,
+#06142e,
+#0f3460,
+#1b3c73
+);
+
+padding:40px;
+color:white;
+min-height:100vh;
+overflow-x:hidden;
+
+}
+
+/* Header */
+
+.header{
+
+text-align:center;
+margin-bottom:40px;
+
+}
+
+.header h1{
+
+font-size:45px;
+margin-bottom:10px;
+
+}
+
+.header p{
+
+opacity:.8;
+
+}
+
+/* Search */
+
+.search-box{
+
+width:60%;
+margin:auto;
+margin-bottom:50px;
+
+}
+
+.search-box input{
+
+width:100%;
+padding:18px;
+
+border:none;
+outline:none;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+color:white;
+
+font-size:16px;
+
+}
+
+.search-box input::placeholder{
+
+color:#ddd;
+
+}
+
+
+/* Cards */
+
+.container{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.card{
+
+background:
+rgba(255,255,255,.08);
+
+padding:30px;
+
+border-radius:25px;
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.3);
+
+transition:.5s;
+
+}
+
+.card:hover{
+
+transform:
+translateY(-10px);
+
+background:
+rgba(77,163,255,.2);
+
+}
+
+.icon{
+
+font-size:50px;
+margin-bottom:15px;
+
+}
+
+.card h2{
+
+margin-bottom:15px;
+font-size:22px;
+
+}
+
+.card p{
+
+line-height:28px;
+opacity:.8;
+
+margin-bottom:20px;
+
+}
+
+.btn{
+
+width:100%;
+
+padding:14px;
+
+border:none;
+
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:15px;
+
+font-weight:600;
+
+color:white;
+
+background:
+linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+transition:.5s;
+
+}
+
+.btn:hover{
+
+transform:
+translateY(-5px);
+
+box-shadow:
+0 0 25px #4da3ff;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.search-box{
+
+width:100%;
+}
+
+.header h1{
+
+font-size:32px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="header">
+
+<h1>
+
+📚 120+ Academic Courses
+
+</h1>
+
+<p>
+
+Choose your course and enroll instantly
+
+</p>
+
+</div>
+
+
+<div class="search-box">
+
+<input
+type="text"
+id="search"
+
+placeholder="Search courses..."
+
+onkeyup="searchCourse()">
+
+</div>
+
+
+<div class="container"
+
+id="courseContainer">
+
+</div>
+
+
+<script>
+
+let courses=[
+
+"Java Programming",
+"Python",
+"C Programming",
+"C++",
+"Data Structures",
+"Algorithms",
+"MySQL",
+"DBMS",
+"HTML",
+"CSS",
+"JavaScript",
+"Servlet",
+"JSP",
+"Spring Boot",
+"React JS",
+"Node JS",
+"Artificial Intelligence",
+"Machine Learning",
+"Deep Learning",
+"Data Science",
+"Cloud Computing",
+"AWS",
+"Cyber Security",
+"Software Engineering",
+"Computer Networks",
+"Operating System",
+"Android Development",
+"PHP",
+"MongoDB",
+"Data Analytics"
+
+];
+
+
+let icons=[
+
+"💻",
+"🤖",
+"📚",
+"🌐",
+"🗄",
+"📱",
+"☁",
+"🔒"
+
+];
+
+
+let container=
+
+document.getElementById(
+"courseContainer"
+);
+
+
+for(let i=1;i<=120;i++){
+
+let course=
+
+courses[
+Math.floor(
+Math.random()*courses.length
+)
+];
+
+let icon=
+
+icons[
+Math.floor(
+Math.random()*icons.length
+)
+];
+
+
+container.innerHTML+=`
+
+<div class="card">
+
+<div class="icon">
+
+${icon}
+
+</div>
+
+<h2>
+
+${course} ${i}
+
+</h2>
+
+<p>
+
+Learn ${course}
+with practical examples and projects.
+
+</p>
+
+<button
+
+class="btn"
+
+onclick="enroll('${course} ${i}')">
+
+Enroll Now
+
+</button>
+
+</div>
+
+`;
+
+}
+
+
+
+function enroll(course){
+
+window.location=
+
+"EnrollServlet?course="
+
++encodeURIComponent(course);
+
+}
+
+
+
+function searchCourse(){
+
+let input=
+
+document.getElementById(
+"search"
+).value.toUpperCase();
+
+
+let card=
+
+document.querySelectorAll(
+".card"
+);
+
+
+for(let i=0;i<card.length;i++){
+
+let title=
+
+card[i]
+.getElementsByTagName(
+"h2"
+)[0];
+
+if(
+
+title.innerHTML.toUpperCase()
+.indexOf(input)>-1
+
+){
+
+card[i].style.display="";
+
+}
+
+else{
+
+card[i].style.display="none";
+
+}
+
+}
+
+}
+
+</script>
+
+</body>
+</html>

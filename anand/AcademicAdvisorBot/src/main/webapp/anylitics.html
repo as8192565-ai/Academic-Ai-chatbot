@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Analytics Dashboard</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Poppins;
+background:linear-gradient(135deg,#071739,#0f3460,#1b3c73);
+color:white;
+}
+
+.header{
+text-align:center;
+padding:20px;
+font-size:28px;
+font-weight:bold;
+color:#38bdf8;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:20px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+background:rgba(77,163,255,0.2);
+}
+
+.card h2{
+font-size:40px;
+color:#4da3ff;
+}
+
+.card p{
+opacity:0.8;
+}
+
+.table-box{
+padding:20px;
+}
+
+table{
+width:90%;
+margin:auto;
+border-collapse:collapse;
+background:rgba(255,255,255,0.08);
+border-radius:10px;
+overflow:hidden;
+}
+
+th,td{
+padding:12px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.2);
+}
+
+th{
+background:#1e3a8a;
+}
+
+tr:hover{
+background:rgba(255,255,255,0.1);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="header">
+📊 Academic Analytics Dashboard
+</div>
+
+<!-- Summary Cards -->
+<div class="cards">
+
+<div class="card">
+<h2>0</h2>
+<p>Total Students</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Total Departments</p>
+</div>
+
+<div class="card">
+<h2>0</h2>
+<p>Total Registrations</p>
+</div>
+
+</div>
+
+<!-- Table from Servlet -->
+<div class="table-box">
+<a href="AnalyticsServlet" style="color:#38bdf8;text-decoration:none;">
+👉 Load Live Database Data
+</a>
+</div>
+
+</body>
+</html>

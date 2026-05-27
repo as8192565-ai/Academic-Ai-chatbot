@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academic Bot Features</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#06142E,
+#0D2A5C,
+#071A3B
+);
+
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
+}
+
+/* Main Section */
+
+.features{
+
+width:100%;
+max-width:1400px;
+
+text-align:center;
+}
+
+/* Heading */
+
+.features h1{
+
+font-size:50px;
+
+font-weight:700;
+
+margin-bottom:15px;
+
+background:linear-gradient(
+to right,
+#5cbcff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+}
+
+.features p{
+
+color:#d9d9d9;
+
+margin-bottom:60px;
+
+font-size:18px;
+}
+
+/* Card Container */
+
+.container{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:35px;
+}
+
+/* Cards */
+
+.card{
+
+position:relative;
+
+padding:40px;
+
+border-radius:30px;
+
+background:
+rgba(255,255,255,.06);
+
+backdrop-filter:blur(20px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+overflow:hidden;
+
+cursor:pointer;
+
+transition:.6s;
+
+box-shadow:
+
+0 10px 30px rgba(0,0,0,.2);
+
+}
+
+/* glowing effect */
+
+.card::before{
+
+content:"";
+
+position:absolute;
+
+width:150px;
+height:150px;
+
+background:
+radial-gradient(
+#4da3ff,
+transparent
+);
+
+top:-60px;
+right:-60px;
+
+opacity:.3;
+
+transition:.8s;
+}
+
+.card:hover::before{
+
+transform:scale(3);
+
+opacity:.5;
+}
+
+/* hover */
+
+.card:hover{
+
+transform:
+translateY(-15px);
+
+box-shadow:
+
+0 15px 40px rgba(77,163,255,.4);
+
+border:
+1px solid rgba(77,163,255,.5);
+
+}
+
+/* Icon */
+
+.icon{
+
+font-size:55px;
+
+margin-bottom:20px;
+
+transition:.6s;
+}
+
+.card:hover .icon{
+
+transform:
+rotate(360deg)
+scale(1.2);
+
+}
+
+/* card heading */
+
+.card h2{
+
+color:white;
+
+margin-bottom:15px;
+}
+
+/* paragraph */
+
+.card p{
+
+font-size:15px;
+
+line-height:28px;
+
+color:#d8d8d8;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.features h1{
+
+font-size:35px;
+}
+
+.features p{
+
+font-size:15px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<section class="features">
+
+<h1>Amazing Features</h1>
+
+<p>
+Smart AI based academic guidance system
+</p>
+
+<div class="container">
+
+
+<div class="card">
+
+<div class="icon">
+📚
+</div>
+
+<h2>Course Recommendation</h2>
+
+<p>
+
+Get personalized course suggestions according to your interests and semester.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+🤖
+</div>
+
+<h2>AI Chat Support</h2>
+
+<p>
+
+Ask academic questions and get instant intelligent answers.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+📅
+</div>
+
+<h2>Academic Planning</h2>
+
+<p>
+
+Generate semester roadmaps and manage academic progress.
+
+</p>
+
+</div>
+
+
+
+<div class="card">
+
+<div class="icon">
+📝
+</div>
+
+<h2>Appointment Booking</h2>
+
+<p>
+
+Book meetings with advisors and receive notifications.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

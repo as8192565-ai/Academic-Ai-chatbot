@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Academic Dashboard</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+display:flex;
+min-height:100vh;
+background:linear-gradient(135deg,#071739,#0f3460,#1b3c73);
+color:white;
+overflow-x:hidden;
+}
+
+
+/* Sidebar */
+
+.sidebar{
+width:260px;
+height:100vh;
+position:fixed;
+padding:30px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+border-right:1px solid rgba(255,255,255,.1);
+}
+
+.logo{
+font-size:30px;
+font-weight:700;
+margin-bottom:60px;
+}
+
+.logo span{
+color:#4da3ff;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar ul li{
+margin:18px 0;
+}
+
+.sidebar ul li a{
+
+display:flex;
+align-items:center;
+gap:10px;
+
+padding:15px;
+
+text-decoration:none;
+color:white;
+
+border-radius:15px;
+
+transition:.5s;
+}
+
+.sidebar ul li a:hover{
+
+background:rgba(77,163,255,.2);
+
+transform:translateX(10px);
+
+}
+
+
+/* Main */
+
+.main{
+margin-left:260px;
+padding:30px;
+width:100%;
+}
+
+
+/* Topbar */
+
+.topbar{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:20px 30px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+margin-bottom:30px;
+
+}
+
+.search input{
+
+width:350px;
+padding:14px;
+
+border:none;
+outline:none;
+
+border-radius:50px;
+
+background:rgba(255,255,255,.1);
+
+color:white;
+
+}
+
+.profile{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+
+.profile img{
+
+width:55px;
+height:55px;
+border-radius:50%;
+border:3px solid #4da3ff;
+
+}
+
+
+/* Welcome */
+
+.welcome{
+
+padding:40px;
+
+border-radius:30px;
+
+background:
+linear-gradient(
+45deg,
+rgba(77,163,255,.2),
+rgba(255,255,255,.08)
+);
+
+margin-bottom:35px;
+
+}
+
+.welcome h1{
+
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+.welcome p{
+
+line-height:28px;
+opacity:.8;
+
+}
+
+
+/* Cards */
+
+.cards{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+padding:30px;
+
+background:
+rgba(255,255,255,.08);
+
+border-radius:25px;
+
+transition:.5s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+background:
+rgba(77,163,255,.2);
+
+}
+
+.card h2{
+
+font-size:38px;
+
+color:#4da3ff;
+
+margin-bottom:10px;
+
+}
+
+
+/* Actions */
+
+.actions{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(300px,1fr));
+
+gap:30px;
+
+}
+
+.box{
+
+padding:35px;
+
+background:
+rgba(255,255,255,.08);
+
+border-radius:25px;
+
+transition:.5s;
+
+}
+
+.box:hover{
+
+transform:scale(1.03);
+
+}
+
+.btn{
+
+display:inline-block;
+
+margin-top:20px;
+
+padding:12px 25px;
+
+border-radius:30px;
+
+text-decoration:none;
+
+background:
+linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+color:white;
+
+font-weight:600;
+
+}
+
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.sidebar{
+width:100%;
+height:auto;
+position:relative;
+}
+
+.main{
+margin-left:0;
+}
+
+.topbar{
+flex-direction:column;
+gap:20px;
+}
+
+.search input{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="sidebar">
+
+<div class="logo">
+
+🎓 Academic<span>Bot</span>
+
+</div>
+
+
+<ul>
+
+<li><a href="#">🏠 Dashboard</a></li>
+
+<li><a href="chatbot.html">🤖 AI Chatbot</a></li>
+
+<li><a href="courses.html">📚 Courses</a></li>
+
+<li><a href="appointment.html">📅 Appointment</a></li>
+
+<li><a href="anylitics.html">📊 Analytics</a></li>
+
+<li><a href="login.html">🚪 Logout</a></li>
+
+</ul>
+
+</div>
+
+
+<div class="main">
+
+<div class="topbar">
+
+<div class="search">
+
+<input
+type="text"
+placeholder="Search here...">
+
+</div>
+
+<div class="profile">
+
+<img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png">
+
+<div>
+
+
+
+<p>Student</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="welcome">
+
+<h1>Welcome Back 👋</h1>
+
+<p>
+
+Manage your academic journey using AI-powered guidance,
+course recommendations and progress tracking.
+
+</p>
+
+</div>
+
+
+<div class="cards">
+
+<div class="card">
+
+<h2>100+</h2>
+
+<p>Courses Available</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>12</h2>
+
+<p>Appointments</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>150+</h2>
+
+<p>AI Responses</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>95%</h2>
+
+<p>Academic Progress</p>
+
+</div>
+
+</div>
+
+
+
+<div class="actions">
+
+<div class="box">
+
+<h2>🤖 AI Assistant</h2>
+
+<p>
+
+Ask questions and get academic guidance instantly.
+
+</p>
+
+<a href="chatbot.html" class="btn">
+
+Open
+
+</a>
+
+</div>
+
+
+<div class="box">
+
+<h2>📚 Learning Progress</h2>
+
+<p>
+
+Track course completion and performance.
+
+</p>
+
+<a href="#" class="btn">
+
+View
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

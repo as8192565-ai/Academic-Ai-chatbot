@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Login</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+
+background:linear-gradient(
+135deg,
+#06142e,
+#0f3460,
+#1b3c73
+);
+
+}
+
+.container{
+
+width:400px;
+
+padding:40px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(255,255,255,.1);
+
+box-shadow:
+0 10px 40px rgba(0,0,0,.4);
+
+color:white;
+
+}
+
+h1{
+
+text-align:center;
+margin-bottom:30px;
+
+}
+
+.input-box{
+
+margin-bottom:20px;
+}
+
+.input-box input,
+.input-box select{
+
+width:100%;
+
+padding:15px 20px;
+
+border:none;
+outline:none;
+
+border-radius:50px;
+
+background:
+rgba(255,255,255,.1);
+
+color:white;
+
+font-size:15px;
+
+border:
+1px solid rgba(255,255,255,.1);
+
+transition:.5s;
+}
+
+.input-box input:focus,
+.input-box select:focus{
+
+border:1px solid #4da3ff;
+
+box-shadow:
+0 0 15px #4da3ff;
+}
+
+input::placeholder{
+
+color:#ddd;
+}
+
+select option{
+
+background:#0f3460;
+color:white;
+}
+
+
+button{
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:16px;
+
+cursor:pointer;
+
+font-weight:bold;
+
+background:linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+color:white;
+
+}
+
+button:hover{
+
+transform:translateY(-5px);
+transition:.5s;
+}
+
+.register{
+
+margin-top:20px;
+text-align:center;
+}
+
+.register a{
+
+color:#4da3ff;
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Student Login</h1>
+
+<form action="LoginServlet" method="post">
+
+<div class="input-box">
+
+<select name="department" required>
+
+<option value="">
+Select Department
+</option>
+
+<option>
+Computer Science Engineering
+</option>
+
+<option>
+Information Technology
+</option>
+
+<option>
+Mechanical Engineering
+</option>
+
+<option>
+Civil Engineering
+</option>
+
+<option>
+Electrical Engineering
+</option>
+
+<option>
+Electronics Engineering
+</option>
+
+<option>
+Artificial Intelligence
+</option>
+
+<option>
+Data Science
+</option>
+
+<option>
+BCA
+</option>
+
+<option>
+MCA
+</option>
+
+</select>
+
+</div>
+
+
+<div class="input-box">
+
+<input type="password"
+name="password"
+placeholder="Password"
+required>
+
+</div>
+
+<button type="submit">
+
+Login
+
+</button>
+
+</form>
+
+<div class="register">
+
+Don't have account?
+
+<a href="register.html">
+
+Register
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

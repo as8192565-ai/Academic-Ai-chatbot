@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Section</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:linear-gradient(
+135deg,
+#071426,
+#0d2b5e,
+#071a3a
+);
+
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:50px;
+color:white;
+}
+
+/* Main section */
+
+.about{
+
+width:100%;
+max-width:1300px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+gap:60px;
+flex-wrap:wrap;
+}
+
+/* Left */
+
+.left{
+
+flex:1;
+min-width:300px;
+}
+
+.left h1{
+
+font-size:50px;
+margin-bottom:20px;
+
+background:linear-gradient(
+to right,
+#4da3ff,
+#ffffff
+);
+
+-webkit-background-clip:text;
+color:transparent;
+}
+
+.left p{
+
+line-height:35px;
+font-size:17px;
+color:#d9d9d9;
+
+margin-bottom:30px;
+}
+
+/* Button */
+
+.btn{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(
+45deg,
+#4da3ff,
+#00d4ff
+);
+
+color:white;
+
+font-size:16px;
+
+font-weight:600;
+
+cursor:pointer;
+
+transition:.5s;
+
+box-shadow:
+0 10px 30px rgba(77,163,255,.3);
+}
+
+.btn:hover{
+
+transform:translateY(-8px);
+
+box-shadow:
+0 15px 40px rgba(77,163,255,.5);
+}
+
+
+/* Right Cards */
+
+.right{
+
+flex:1;
+
+display:grid;
+
+grid-template-columns:
+repeat(2,1fr);
+
+gap:25px;
+
+min-width:300px;
+}
+
+/* Card */
+
+.card{
+
+padding:30px;
+
+border-radius:25px;
+
+background:
+rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:
+1px solid rgba(255,255,255,.1);
+
+text-align:center;
+
+transition:.6s;
+
+box-shadow:
+0 10px 30px rgba(0,0,0,.2);
+}
+
+.card:hover{
+
+transform:
+translateY(-12px);
+
+background:
+rgba(77,163,255,.15);
+
+box-shadow:
+0 15px 40px rgba(77,163,255,.4);
+}
+
+.card h2{
+
+font-size:40px;
+margin-bottom:10px;
+color:#4da3ff;
+}
+
+.card p{
+
+font-size:15px;
+color:#ddd;
+}
+
+
+/* Responsive */
+
+@media(max-width:850px){
+
+.about{
+
+flex-direction:column;
+text-align:center;
+}
+
+.right{
+
+grid-template-columns:1fr;
+}
+
+.left h1{
+
+font-size:38px;
+}
+
+}
+
+</style>
+
+</head>
+<body>
+
+<section class="about">
+
+<div class="left">
+
+<h1>About Our AI Advisor</h1>
+
+<p>
+
+Our Academic Advising Chatbot is an AI-powered system designed to help students with course recommendations, semester planning, academic guidance, and appointment scheduling. It provides instant assistance anytime and improves the overall student learning experience.
+
+</p>
+
+<button class="btn">
+Learn More
+</button>
+
+</div>
+
+
+<div class="right">
+
+<div class="card">
+
+<h2>500+</h2>
+
+<p>Students Supported</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>100+</h2>
+
+<p>Courses Available</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>24/7</h2>
+
+<p>AI Assistance</p>
+
+</div>
+
+
+<div class="card">
+
+<h2>95%</h2>
+
+<p>Student Satisfaction</p>
+
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>
